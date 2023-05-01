@@ -1,0 +1,220 @@
+@import url('https://font.googleapis.com/css2?family=poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --yellow:yellow;
+    
+}
+*{
+    font-family: 'poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 2s linear;
+    
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    background: var(--yellow);
+    color: blue;
+    font-size: 1.7rem;
+    cursor:pointer;
+    font-weight: bold;
+    box-shadow: 0 0.5rem 1rem  rgba(0, 0, 0, 0.7);
+    border: 0.1rem solid rgba(0,0,0,0.7);
+    
+
+}
+.btn:hover{
+    background: palevioletred;
+    color: yellow;
+}
+html{
+     font-size: 62.5%;
+     overflow-x: hidden;
+     scroll-behavior: smooth;
+
+}
+section{
+    padding: 3rem 9%;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(red, green, blue, alpha);
+}
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: blue;
+
+}
+.header .logo i{
+    color: blue;
+    padding-right: .5rem;
+
+
+}*/
+.header .navbar a{
+    font-size:1.7rem;
+    color: blue;
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: gray;
+}
+#menu-btn{
+    display: none;
+}
+@keyframes fadeleft{
+    0%{
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+}
+@keyframes fadeup{
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.header .icons div{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: blue;
+}
+.header .icons div:hover{
+    color: grey;
+}
+.home{
+    padding-top:14rem;
+    background: var(--yellow);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.home .slide-container .slide{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:n1.5rem;
+    display: none;
+}
+.home .slides-container .slide.active{
+    display:flex;
+
+}
+.home .slides-container .slide .content{
+    flex: 1 1 40rem;
+    animation: fadeleft .4s linear .4s backwards;
+}
+.home .slides-container .slide .content span{
+    color: blue;
+    font-size: 500%;
+    font-weight: bolder;
+
+}
+.home .slides-container .slide .content h3{
+    font-size: 500%;
+    color: blue;
+    padding: .5rem 0;
+}
+.home .slide-container .slide .img{
+    flex: 1 1 40rem;
+    margin: 3rem 0;
+}
+.home .slide-container .slide .img img{
+    width: 100%;
+    animation: fadeup .4s% linear;
+
+}
+.home #next-slide,
+.home #prev-slide{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    text-align: center;
+    background: var(--yellow);
+    font-size: 2rem;
+    color: green;
+    cursor:pointer;
+}
+.home #next-slide:hover,
+.home #prev-slide:hover{
+    background: var(--yellow);
+    color: aqua;
+}
+.home #prev-slide{
+    left: 2rem;
+}
+.home #next-slide{
+    right: 2rem;
+}
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+
+    }
+    .header{
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 786px){
+    #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 90%;
+        left: 0;
+        right: 0;
+        background: var(--yellow);
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+        border-bottom: 0.1rem solid rgba(0,0,0,0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: var(--yellow);
+        font-size: 2rem;
+        display: block;
+        border-radius: .5rem;
+        box-shadow: 0 0.5rem 1rem  rgba(0, 0, 0, 0.7);
+        border: 0.1rem solid rgba(0,0,0,0.7);
+    }
+}
+@media (max-width: 450px ){
+    html{
+        font-size: 50%;
+
+    }
+    .home .slide-container .slide h3{
+
+
+    }
+}
